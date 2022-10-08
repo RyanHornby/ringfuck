@@ -1,0 +1,10 @@
+mkdir -p obj
+cd src/
+src_files=($(ls *.c))
+cd ../
+for file in "${src_files[@]}"
+do
+	basename=`echo "$file" | cut -d "." -f 1`
+	gcc -c "src/"$basename".c" -o "obj/"$basename".o"
+done
+gcc -o main obj/*.o -lm
