@@ -11,11 +11,13 @@ typedef struct {
 } ringCluster;
 
 ringCluster* makeRingCluster(int *, int);
+void freeRingCluster(ringCluster *);
 void incRings(ringCluster *);
 void decRings(ringCluster *);
 void spinRight(ringCluster *);
 void spinLeft(ringCluster *);
 void printBytes(ringCluster *);
 void readBytes(ringCluster *);
+char shouldLoop(ringCluster *);
 
 #endif

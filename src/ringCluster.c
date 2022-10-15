@@ -22,6 +22,16 @@ void freeRingCluster(ringCluster *rings) {
     free(rings);
 }
 
+char shouldLoop(ringCluster *rings) {
+    for (int i = 0; i < rings->size; i++) {
+        if (rings->rings[i]->data[rings->rings[i]->index] != 0) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
 void performOperation(ringCluster *rings, void (*operation)(ring *)) {
     for (int i = 0; i < rings->size; i++) {
         (*operation)(rings->rings[i]);
