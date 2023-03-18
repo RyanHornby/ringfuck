@@ -49,5 +49,7 @@ void printByte(ring *ring) {
 }
 
 void readByte(ring *ring) {
-    scanf(" %c", &ring->data[ring->index]);
+    char buf[2];
+    fgets(buf, 2, stdin);
+    ring->data[ring->index] = buf[0];
 }
