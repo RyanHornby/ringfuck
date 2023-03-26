@@ -44,6 +44,7 @@ void interpret(ringCluster *rings, char *data, int len) {
                 break;
             case ' ':
             case '\n':
+            case '\r':
             case '\t':
                 break;
             default:
